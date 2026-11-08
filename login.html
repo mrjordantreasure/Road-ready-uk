@@ -1,0 +1,80 @@
+!OCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login - RoadReady UK</title>
+        <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+          <div cla<ss="login-container">
+              <h1>🚗 RoadReady UK</h1>
+                  <h2>Sign In / Sign Up</h2>
+
+                      <div class="tabs">
+                            <button id="signinTab" class="tab active">Sign In</button>
+                                  <button id="signupTab" class="tab">Sign Up</button>
+                                      </div>
+
+                                          <!-- SIGN IN FORM -->
+                                              <div id="signinForm" class="form-container">
+                                                    <input type="email" id="signinEmail" placeholder="Enter your email" required>
+                                                          <input type="password" id="signinPassword" placeholder="Enter your password" required>
+                                                                <button onclick="handleSignIn()" class="btn primary">Sign In</button>
+                                                                    </div>
+
+                                                                        <!-- SIGN UP FORM -->
+                                                                            <div id="signupForm" class="form-container" style="display: none;">
+                                                                                  <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                                                                                        <input type="password" id="signupPassword" placeholder="Create a password (min 6 chars)" required>
+                                                                                              <button onclick="handleSignUp()" class="btn primary">Create Account</button>
+                                                                                                  </div>
+
+                                                                                                      <p><a href="index.html">← Back to Home</a></p>
+                                                                                                        </div>
+
+                                                                                                          <script src="script.js" type="module"></script>
+                                                                                                            <script>
+                                                                                                                // Switch between tabs
+                                                                                                                    document.getElementById('signinTab').addEventListener('click', () => {
+                                                                                                                          document.getElementById('signinTab').classList.add('active');
+                                                                                                                                document.getElementById('signupTab').classList.remove('active');
+                                                                                                                                      document.getElementById('signinForm').style.display = 'block';
+                                                                                                                                            document.getElementById('signupForm').style.display = 'none';
+                                                                                                                                                });
+
+                                                                                                                                                    document.getElementById('signupTab').addEventListener('click', () => {
+                                                                                                                                                          document.getElementById('signupTab').classList.add('active');
+                                                                                                                                                                document.getElementById('signinTab').classList.remove('active');
+                                                                                                                                                                      document.getElementById('signupForm').style.display = 'block';
+                                                                                                                                                                            document.getElementById('signinForm').style.display = 'none';
+                                                                                                                                                                                });
+
+                                                                                                                                                                                    // Handle Sign In
+                                                                                                                                                                                        function handleSignIn() {
+                                                                                                                                                                                              const email = document.getElementById('signinEmail').value;
+                                                                                                                                                                                                    const password = document.getElementById('signinPassword').value;
+                                                                                                                                                                                                          if (!email || !password) {
+                                                                                                                                                                                                                  alert("Please fill in all fields");
+                                                                                                                                                                                                                          return;
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                      signIn(email, password);
+                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                              // Handle Sign Up
+                                                                                                                                                                                                                                                  function handleSignUp() {
+                                                                                                                                                                                                                                                        const email = document.getElementById('signupEmail').value;
+                                                                                                                                                                                                                                                              const password = document.getElementById('signupPassword').value;
+                                                                                                                                                                                                                                                                    if (!email || !password) {
+                                                                                                                                                                                                                                                                            alert("Please fill in all fields");
+                                                                                                                                                                                                                                                                                    return;
+                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                                if (password.length < 6) {
+                                                                                                                                                                                                                                                                                                        alert("Password must be at least 6 characters");
+                                                                                                                                                                                                                                                                                                                return;
+                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                            signUp(email, password);
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                  </script>
+                                                                                                                                                                                                                                                                                                                                  </body>
+                                                                                                                                                                                                                                                                                                                                  </html>
