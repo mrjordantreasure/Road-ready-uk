@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My Progress - RoadReady UK</title>
+        <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+          <header>
+              <h1>📊 My Progress</h1>
+                  <nav>
+                        <a href="index.html">Home</a>
+                              <a href="lessons.html">Lessons</a>
+                                    <a href="mock-test.html">Mock Test</a>
+                                          <a href="safety.html">Safety</a>
+                                                <a href="hazard.html">Hazards</a>
+                                                      <button onclick="signOutUser()" class="sign-out-btn">Sign Out</button>
+                                                          </nav>
+                                                            </header>
+
+                                                              <main>
+                                                                  <h2>Your Learning Progress</h2>
+                                                                      <div class="progress-card">
+                                                                            <p><strong>Lessons Completed:</strong> <span id="lessonsCount">0</span></p>
+                                                                                  <p><strong>Mock Tests Completed:</strong> <span id="testsCount">0</span></p>
+                                                                                        <p><strong>Latest Score:</strong> <span id="totalScore">0</span>/50</p>
+                                                                                              <p><strong>Last Active:</strong> <span id="lastActive">—</span></p>
+                                                                                                  </div>
+                                                                                                    </main>
+
+                                                                                                      <script type="module" src="script.js"></script>
+                                                                                                        <script type="module">
+                                                                                                            import { loadUserProgress, auth } from './script.js';
+                                                                                                                import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+                                                                                                                    
+                                                                                                                        onAuthStateChanged(auth, (user) => {
+                                                                                                                              if (!user) {
+                                                                                                                                      window.location.href = "login.html";
+                                                                                                                                            } else {
+                                                                                                                                                    loadUserProgress().then(data => {
+                                                                                                                                                              if (data) {
+                                                                                                                                                                          document.getElementById('lessonsCount').textContent = data.lessonsCompleted || 0;
+                                                                                                                                                                                      document.getElementById('testsCount').textContent = data.mockTestsCompleted || 0;
+                                                                                                                                                                                                  document.getElementById('totalScore').textContent = data.totalScore || 0;
+                                                                                                                                                                                                              document.getElementById('lastActive').textContent = data.lastActive 
+                                                                                                                                                                                                                            ? new Date(data.lastActive).toLocaleString() 
+                                                                                                                                                                                                                                          : '—';
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                      });
+                                                                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                        </html>
