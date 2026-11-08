@@ -1,6 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-:root{font-family:Nunito,system-ui,sans-serif;color:#102b50;background:#f3f7fb;font-synthesis:none;text-rendering:optimizeLegibility}
-*{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}button{cursor:pointer}
-.auth-layout{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#fff}.auth-hero{background:linear-gradient(145deg,#102b50,#174b78);color:#fff;padding:38px clamp(28px,6vw,84px);display:flex;flex-direction:column;overflow:hidden;position:relative}.brand{display:flex;align-items:center;gap:12px;color:inherit}.brand-icon{width:48px;height:48px;border-radius:15px;background:#ffd43b;color:#102b50;display:grid;place-items:center}.brand b{display:block;font-size:20px;font-weight:900;letter-spacing:.4px}.brand b span{color:#ffd43b}.brand small{display:block;font-size:10px;letter-spacing:2px;color:#cbd9e7;font-weight:800;margin-top:2px}.hero-copy{margin:auto 0;max-width:530px;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:900;color:#e0a900}.hero-copy h1{font-size:clamp(48px,6vw,76px);line-height:.98;margin:16px 0;font-weight:900}.hero-copy p{font-size:18px;line-height:1.6;color:#d6e5f2;max-width:440px}.road-art{height:110px;margin:30px 0 18px;position:relative;overflow:hidden}.road-line{position:absolute;width:130%;height:160px;border:28px solid #233f5e;border-bottom:0;border-radius:50% 50% 0 0;transform:rotate(-8deg);top:35px;left:-10%;box-shadow:inset 0 3px #fff,0 -3px #fff}.road-line:after{content:"";position:absolute;left:50%;top:0;height:100px;border-left:5px dashed #ffd43b}.hero-points{display:flex;flex-wrap:wrap;gap:10px 20px;color:#fff;font-size:13px;font-weight:800}.hero-footer{font-size:19px;font-weight:900;color:#ffd43b}.auth-panel{display:grid;place-items:center;padding:36px 24px}.auth-card{width:min(100%,430px)}.mobile-brand{display:none}.auth-card h2{font-size:32px;margin:10px 0 4px}.muted{color:#6d7e91;margin-top:4px}.auth-card form{display:grid;gap:17px;margin-top:28px}.auth-card label{font-size:13px;font-weight:800;display:grid;gap:8px}.auth-card input{width:100%;border:1px solid #d9e2eb;border-radius:12px;padding:13px 14px;outline:none;background:#fff;color:#102b50}.auth-card input:focus{border-color:#287bc1;box-shadow:0 0 0 3px #dceeff}.input-icon{display:flex;align-items:center;gap:9px;border:1px solid #d9e2eb;border-radius:12px;padding-left:12px;color:#7890a8}.input-icon input{border:0;box-shadow:none!important;padding-left:0}.icon-button{border:0;background:none;color:#7890a8;padding:8px}.primary,.outline{border:0;border-radius:12px;padding:13px 17px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:9px}.primary{background:#ffd43b;color:#102b50}.primary:hover{background:#ffca16}.primary:disabled{opacity:.5;cursor:not-allowed}.full{width:100%;margin-top:4px}.outline{background:#fff;border:1px solid #d7e1eb;color:#173c61}.small{padding:9px 12px;font-size:12px}.switch-auth{text-align:center;font-size:13px;color:#6d7e91;margin:22px 0}.switch-auth button{border:0;background:none;color:#1767b4;font-weight:900}.privacy-note{display:flex;gap:9px;align-items:center;background:#eef8f1;color:#286442;padding:12px;border-radius:12px;font-size:12px;font-weight:700}.tiny{font-size:11px;color:#8391a1;line-height:1.5}.notice{padding:12px;border-radius:11px;font-size:13px;font-weight:700}.notice.error{background:#fff0ed;color:#a43b2a}.notice.success{background:#eaf7ed;color:#286442}
-.app-shell{min-height:100vh}.topbar{height:76px;background:#102b50;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px)}.top-actions{display:flex;align-items:center;gap:16px}.welcome-user{font-weight:800;font-size:13px}.dashboard-wrap{max-width:1200px;margin:32px auto;padding:0 24px;display:grid;grid-template-columns:225px 1fr;gap:28px}.sidebar{background:#fff;border:1px solid #e4ebf2;border-radius:18px;padding:17px;height:max-content;position:sticky;top:20px}.side-label{font-size:10px;letter-spacing:1.5px;color:#8b9aac;font-weight:900;padding:5px 10px 13px}.nav-item{width:100%;display:flex;align-items:center;gap:11px;padding:12px 10px;border:0;border-radius:10px;background:transparent;color:#52677f;font-weight:800;text-align:left;margin:2px 0}.nav-item.active{background:#eaf4ff;color:#1767b4}.sidebar-tip{margin-top:28px;background:#fff5d6;border-radius:13px;padding:14px;display:grid;gap:7px;color:#755500}.sidebar-tip small{line-height:1.5;color:#806b35}.main-content{min-width:0}.welcome-banner{background:linear-gradient(115deg,#174b78,#102b50);border-radius:20px;padding:28px 30px;color:#fff;display:flex;justify-content:space-between;align-items:center;overflow:hidden}.welcome-banner h1{font-size:clamp(24px,3vw,34px);margin:7px 0}.welcome-banner p{color:#d5e4f0;margin:0}.banner-emoji{font-size:70px}.section-heading{margin:27px 0 14px}.section-heading h2,.content-card h2{margin:0}.section-heading p{margin:3px 0}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.stat-card{background:#fff;border:1px solid #e4ebf2;border-radius:15px;padding:18px;display:grid;gap:5px}.stat-card svg{color:#1767b4}.stat-card strong{font-size:27px}.stat-card span{font-size:12px;color:#718196;font-weight:700}.content-card{background:#fff;border:1px solid #e4ebf2;border-radius:17px;padding:23px;margin-top:17px}.content-card h3{margin:0}.card-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.card-heading>svg{color:#1767b4}.card-heading p{margin:4px 0}.quiz-card h2{font-size:23px;line-height:1.35;margin:12px 0 22px}.answer-list{display:grid;gap:10px}.answer{border:1px solid #dce5ee;background:#fff;border-radius:12px;text-align:left;padding:14px;color:#203e5d;font-weight:800}.answer.selected{border:2px solid #1767b4;background:#edf6ff}.quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.progress-ring{width:170px;height:170px;border-radius:50%;border:13px solid #e3effa;border-top-color:#29a96b;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:25px auto}.progress-ring strong{font-size:35px}.progress-ring span{font-size:11px;color:#73849a}.empty-state{display:grid;justify-items:center;text-align:center;gap:8px;color:#8190a2;padding:25px}.empty-state b{color:#38536e}.history-list{display:grid}.history-row,.profile-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #edf1f5;gap:10px}.history-row:last-child,.profile-row:last-child{border-bottom:0}.history-row small{display:block;color:#8795a5;margin-top:3px}.history-row strong{background:#eaf4ff;color:#1767b4;padding:6px 10px;border-radius:9px}.profile-row span{color:#78889b}.app-footer{text-align:center;padding:25px;color:#8b99a8;font-size:11px}.app-footer span{padding:0 6px}.loading{min-height:100vh;display:grid;place-items:center;color:#173c61;font-weight:800}
-@media(max-width:800px){.auth-layout{grid-template-columns:1fr}.auth-hero{display:none}.auth-panel{padding:26px 20px}.mobile-brand{display:block;margin-bottom:35px}.dashboard-wrap{grid-template-columns:1fr;margin:18px auto;gap:15px}.sidebar{position:static;display:flex;overflow:auto;gap:4px;padding:8px}.side-label,.sidebar-tip{display:none}.nav-item{white-space:nowrap;width:auto;font-size:12px;padding:10px}.topbar{padding:0 16px}.topbar .brand b{font-size:16px}.topbar .brand-icon{width:40px;height:40px}.welcome-user{display:none}.stat-grid{gap:8px}.stat-card{padding:13px}.stat-card strong{font-size:23px}.content-card{padding:17px}.banner-emoji{font-size:48px}}@media(max-width:420px){.stat-grid{grid-template-columns:1fr 1fr}.stat-card:last-child{grid-column:span 2}.quiz-actions{flex-direction:column}.quiz-actions button{width:100%}}
+ margin: 0;
+            padding: 0;
+                box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+
+                    body {
+                        background: linear-gradient(180deg, #e6f0fa 0%, #ffffff 100%);
+                            min-height: 100vh;
+                                color: #1a365d;
+                                }
+
+                                .hero {
+                                    text-align: center;
+                                        padding: 40px 20px 30px;
+                                            background: linear-gradient(135deg, #0a2463 0%, #1e5bc6 100%);
+                                                color: white;
+                                                }
+
+                                                .hero h1 {
+                                                    font-size: 2.8rem;
+                                                        font-weight: 800;
+                                                            margin-bottom: 8px;
+                                                                letter-spacing: -0.5px;
+                                                                }
+
+                                                                .tagline {
+                                                                    font-size: 1.4rem;
+                                                                        font-style: italic;
+                                                                            color: #ffd100;
+                                                                                margin-bottom: 10px;
+                                                                                    font-weight: 600;
+                                                                                    }
+
+                                                                                    .subheading {
+                                                                                        font-size: 1.1rem;
+                                                                                            opacity: 0.9;
+                                                                                            }
+
+                                                                                            .home-container {
+                                                                                                max-width: 1200px;
+                                                                                                    margin: 0 auto;
+                                                                                                        padding: 30px 20px;
+                                                                                                            display: grid;
+                                                                                                                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                                                                                                    gap: 20px;
+                                                                                                                    }
+}.card {
+        display: block;
+            text-decoration: none;
+                background: white;
+                    border-radius: 16px;
+                        padding: 24px;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                                    border-top: 6px solid;
+                                    }
+
+                                    .card:hover {
+                                        transform: translateY(-4px);
+                                            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+                                            }
+
+                                            .card .icon {
+                                                font-size: 2.5rem;
+                                                    margin-bottom: 12px;
+                                                    }
+
+                                                    .card h3 {
+                                                        font-size: 1.3rem;
+                                                            margin-bottom: 8px;
+                                                                color: #1a365d;
+                                                                }
+
+                                                                .card p {
+                                                                    font-size: 0.95rem;
+                                                                        color: #555;
+                                                                            line-height: 1.5;
+                                                                            }
+
+                                                                            /* Card colours */
+                                                                            .card.blue { border-color: #2563eb; }
+                                                                            .card.blue .icon { color: #2563eb; }
+
+                                                                            .card.teal { border-color: #0d9488; }
+                                                                            .card.teal .icon { color: #0d9488; }
+
+                                                                            .card.green { border-color: #22c55e; }
+                                                                            .card.green .icon { color: #22c55e; }
+
+                                                                            .card.purple { border-color: #a855f7; }
+                                                                            .card.purple .icon { color: #a855f7; }
+
+                                                                            .card.orange { border-color: #f97316; }
+                                                                            .card.orange .icon { color: #f97316; }
+
+                                                                            .card.dark-teal { border-color: #14b8a6; }
+                                                                            .card.dark-teal .icon { color: #14b8a6; }
+
+                                                                            footer {
+                                                                                text-align: center;
+                                                                                    padding: 30px 20px;
+                                                                                        color: #64748b;
+                                                                                            font-size: 0.9rem;
+                                                                                            }
+}
