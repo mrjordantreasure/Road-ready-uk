@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Hazard Perception — Road Ready UK</title>
+                <link rel="stylesheet" href="styles.css">
+                    <style>
+                            .hazard-container {
+                                            max-width: 800px;
+                                                        margin: 0 auto;
+                                                                    padding: 20px;
+                                                                                text-align: center;
+                            }
+                                    .scenario-box {
+                                                    background: #fff;
+                                                                border-radius: 12px;
+                                                                            padding: 30px;
+                                                                                        margin: 20px 0;
+                                                                                                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                                                                                                                min-height: 200px;
+                                                                                                                            display: flex;
+                                                                                                                                        flex-direction: column;
+                                                                                                                                                    justify-content: center;
+                                                                                                                                                                align-items: center;
+                                                                                                                                                                            cursor: pointer;
+                                                                                                                                                                                        transition: background 0.2s;
+                                    }
+                                            .scenario-box:hover {
+                                                            background: #f8f9fa;
+                                            }
+                                                    .click-btn {
+                                                                    background: #007bff;
+                                                                                color: white;
+                                                                                            border: none;
+                                                                                                        padding: 15px 40px;
+                                                                                                                    font-size: 18px;
+                                                                                                                                border-radius: 8px;
+                                                                                                                                            cursor: pointer;
+                                                                                                                                                        margin: 20px 0;
+                                                    }
+                                                            .click-btn:hover {
+                                                                            background: #0056b3;
+                                                            }
+                                                                    .feedback {
+                                                                                    font-size: 18px;
+                                                                                                margin-top: 15px;
+                                                                                                            padding: 10px;
+                                                                                                                        border-radius: 6px;
+                                                                    }
+                                                                            .feedback.good {
+                                                                                            background: #d4edda;
+                                                                                                        color: #155724;
+                                                                            }
+                                                                                    .feedback.late {
+                                                                                                    background: #fff3cd;
+                                                                                                                color: #856404;
+                                                                                    }
+                                                                                            .feedback.too-late {
+                                                                                                            background: #f8d7da;
+                                                                                                                        color: #721c24;
+                                                                                            }
+                                                                                                    .progress-bar {
+                                                                                                                    width: 100%;
+                                                                                                                                height: 8px;
+                                                                                                                                            background: #e9ecef;
+                                                                                                                                                        border-radius: 4px;
+                                                                                                                                                                    margin: 10px 0;
+                                                                                                    }
+                                                                                                            .progress-fill {
+                                                                                                                            height: 100%;
+                                                                                                                                        background: #28a745;
+                                                                                                                                                    border-radius: 4px;
+                                                                                                                                                                transition: width 0.3s;
+                                                                                                            }
+                                                                                                                    .score-display {
+                                                                                                                                    font-size: 20px;
+                                                                                                                                                font-weight: bold;
+                                                                                                                                                            color: #007bff;
+                                                                                                                    }
+                                                                                                                            .start-box, .results-box {
+                                                                                                                                            background: #fff;
+                                                                                                                                                        border-radius: 12px;
+                                                                                                                                                                    padding: 40px;
+                                                                                                                                                                                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                                                                                                                            }
+                                                                                                                                    .instruction {
+                                                                                                                                                    background: #e3f2fd;
+                                                                                                                                                                padding: 15px;
+                                                                                                                                                                            border-radius: 8px;
+                                                                                                                                                                                        margin-bottom: 20px;
+                                                                                                                                                                                                    text-align: left;
+                                                                                                                                    }
+                                                                                                                                            .nav-buttons {
+                                                                                                                                                            display: flex;
+                                                                                                                                                                        gap: 10px;
+                                                                                                                                                                                    justify-content: center;
+                                                                                                                                                                                                margin-top: 20px;
+                                                                                                                                            }
+                                                                                                                                                    .nav-btn {
+                                                                                                                                                                    padding: 10px 20px;
+                                                                                                                                                                                border-radius: 6px;
+                                                                                                                                                                                            border: none;
+                                                                                                                                                                                                        cursor: pointer;
+                                                                                                                                                                                                                    font-size: 16px;
+                                                                                                                                                    }
+                                                                                                                                                            .back-home {
+                                                                                                                                                                            background: #6c757d;
+                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                    text-decoration: none;
+                                                                                                                                                            }
+                                                                                                                                                                </style>
+                                                                                                                                                                </head>
+                                                                                                                                                                <body>
+                                                                                                                                                                    <div class="hazard-container">
+                                                                                                                                                                            <h1>🚦 Hazard Perception Practice</h1>
+                                                                                                                                                                                    
+                                                                                                                                                                                            <!-- Start Screen -->
+                                                                                                                                                                                                    <div id="start-screen" class="start-box">
+                                                                                                                                                                                                                <h2>How It Works</h2>
+                                                                                                                                                                                                                            <div class="instruction">
+                                                                                                                                                                                                                                            <p><strong>🎯 Your goal:</strong> Spot the developing hazard as early as possible!</p>
+                                                                                                                                                                                                                                                            <p><strong>⏱️ Scoring:</strong> Earlier click = More points</p>
+                                                                                                                                                                                                                                                                            <ul style="margin-left: 20px;">
+                                                                                                                                                                                                                                                                                                <li>Early detection = <strong>5 points</strong> ⭐⭐⭐⭐⭐</li>
+                                                                                                                                                                                                                                                                                                                    <li>A bit later = <strong>3 points</strong> ⭐⭐⭐</li>
+                                                                                                                                                                                                                                                                                                                                        <li>Too late = <strong>1 point</strong> ⭐</li>
+                                                                                                                                                                                                                                                                                                                                                            <li>Missed it = <strong>0 points</strong></li>
+                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                                                                                                                                                            <p><strong>✅ Pass mark:</strong> 44 out of 75</p>
+                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <button class="click-btn" onclick="startTest()">Start Practice Test</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <!-- Test Screen -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <div id="test-screen" style="display: none;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span>Clip <span id="clip-num">1</span> of 15</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="score-display">Score: <span id="total-score">0</span> / 75</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-bar">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div id="progress" class="progress-fill" style="width: 0%"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="scenario-area" class="scenario-box" onclick="handleClick()">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h3 id="scenario-title">Loading...</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p id="scenario-text" style="font-size: 18px; color: #666; margin-top: 15px;"></p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p style="margin-top: 30px; color: #007bff; font-weight: bold;">👆 CLICK or TAP when you spot the hazard!</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div id="feedback-area" style="display: none; margin-top: 15px;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div id="feedback-text" class="feedback"
+                            }let currentClip = 0;
+                                let totalScore = 0;
+                                    let clipStartTime = 0;
+                                        let clicked = false;
+
+                                            function shuffleArray(array) {
+                                                        const newArray = [...array];
+                                                                for (let i = newArray.length - 1; i > 0; i--) {
+                                                                                    const j = Math.floor(Math.random() * (i + 1));
+                                                                                                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+                                                                }
+                                                                        return newArray;
+                                            }
+
+                                                function startTest() {
+                                                                currentClip = 0;
+                                                                        totalScore = 0;
+                                                                                clicked = false;
+                                                                                        scenarios = shuffleArray(scenarios);
+                                                                                                
+                                                                                                        document.getElementById('start-screen').style.display = 'none';
+                                                                                                                document.getElementById('results-screen').style.display = 'none';
+                                                                                                                        document.getElementById('test-screen').style.display = 'block';
+                                                                                                                                document.getElementById('total-score').textContent = totalScore;
+                                                                                                                                        
+                                                                                                                                                showScenario();
+                                                }
+
+                                                    function showScenario() {
+                                                                clicked = false;
+                                                                        const scenario = scenarios[currentClip];
+                                                                                
+                                                                                        document.getElementById('clip-num').textContent = currentClip + 1;
+                                                                                                document.getElementById('scenario-title').textContent = scenario.title;
+                                                                                                        document.getElementById('scenario-text').textContent = scenario.text;
+                                                                                                                document.getElementById('feedback-area').style.display = 'none';
+                                                                                                                        document.getElementById('scenario-area').style.opacity = '1';
+                                                                                                                                
+                                                                                                                                        const progressPercent = ((currentClip) / scenarios.length) * 100;
+                                                                                                                                                document.getElementById('progress').style.width = progressPercent + '%';
+                                                                                                                                                        
+                                                                                                                                                                clipStartTime = Date.now();
+                                                    }
+
+                                                        function handleClick() {
+                                                                        if (clicked) return;
+                                                                                clicked = true;
+                                                                                        
+                                                                                                const scenario = scenarios[currentClip];
+                                                                                                        const elapsedSeconds = (Date.now() - clipStartTime) / 1000;
+                                                                                                                
+                                                                                                                        let points = 0;
+                                                                                                                                let feedbackClass = '';
+                                                                                                                                        let feedbackText = '';
+                                                                                                                                                
+                                                                                                                                                        if (elapsedSeconds <= scenario.windowStart) {
+                                                                                                                                                                            points = 5;
+                                                                                                                                                                                        feedbackClass = 'good';
+                                                                                                                                                                                                    feedbackText = `✅ ${scenario.earlyPoint}<br><strong>+5 points</strong> — Perfect early spot! ⭐⭐⭐⭐⭐`;
+                                                                                                                                                        } else if (elapsedSeconds <= scenario.lateStart) {
+                                                                                                                                                                            points = 3;
+                                                                                                                                                                                        feedbackClass = 'late';
+                                                                                                                                                                                                    feedbackText = `⚠️ ${scenario.latePoint}<br><strong>+3 points</strong> — Good, but try to spot it a little sooner! ⭐⭐⭐`;
+                                                                                                                                                        } else {
+                                                                                                                                                                            points = 1;
+                                                                                                                                                                                        feedbackClass = 'too-late';
+                                                                                                                                                                                                    feedbackText = `❌ ${scenario.tooLate}<br><strong>+1 point</strong> — That was too late! Stay alert ⭐`;
+                                                                                                                                                        }
+                                                                                                                                                                
+                                                                                                                                                                        totalScore += points;
+                                                                                                                                                                                document.getElementById('total-score').textContent = totalScore;
+                                                                                                                                                                                        
+                                                                                                                                                                                                const feedbackArea = document.getElementById('feedback-text');
+                                                                                                                                                                                                        feedbackArea.innerHTML = feedbackText;
+                                                                                                                                                                                                                feedbackArea.className = 'feedback ' + feedbackClass;
+                                                                                                                                                                                                                        document.getElementById('feedback-area').style.display = 'block';
+                                                        }
+
+                                                            function nextScenario() {
+                                                                        currentClip++;
+                                                                                if (currentClip < scenarios.length) {
+                                                                                                    showScenario();
+                                                                                } else {
+                                                                                                    showResults();
+                                                                                }
+                                                            }
+
+                                                                function showResults() {
+                                                                                document.getElementById('test-screen').style.display = 'none';
+                                                                                        document.getElementById('results-screen').style.display = 'block';
+                                                                                                
+                                                                                                        document.getElementById('final-score').textContent = totalScore;
+                                                                                                                const passMark = 44;
+                                                                                                                        const message = document.getElementById('result-message');
+                                                                                                                                
+                                                                                                                                        if (totalScore >= passMark) {
+                                                                                                                                                            message.innerHTML = `🎉 <strong>Congratulations — You Passed!</strong><br>Pass mark is ${passMark}/75. You did it! Keep up the great work! 💪`;
+                                                                                                                                        } else {
+                                                                                                                                                            message.innerHTML = `📚 <strong>Almost there!</strong><br>Pass mark is ${passMark}/75. You scored ${totalScore}. Practice makes perfect — try again and focus on spotting hazards EARLIER! 💪`;
+                                                                                                                                        }
+                                                                }<script type="module">
+                                                                    import { auth } from './script.js';
+                                                                        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+                                                                            onAuthStateChanged(auth, (user) => {
+                                                                                      if (!user) window.location.href = "login.html";
+                                                                                          });
+                                                                                            </script>
+                                                                    </script>
+                                                                    </body>
+                                                                    </html>
+                                                                }
+                                            }
