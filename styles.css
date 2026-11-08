@@ -104,3 +104,34 @@
                                                                                             font-size: 0.9rem;
                                                                                             }
 }
+/* ========== NEW HERO / HOMEPAGE STYLING ========== */
+.hero‑links {
+  display: flex;
+  justify‑content: center;
+  gap: 10px;
+  flex‑wrap: wrap;
+  margin‑top: 58vh;
+}
+.hero‑btn {
+  width: 110px;
+  height: 110px;
+  border‑radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: transparent;
+  cursor: pointer;
+}
+.hero‑btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+@media (max‑width: 768px) {
+  .hero‑links {
+    margin‑top: 48vh;
+    gap: 6px;
+  }
+  .hero‑btn {
+    width: 75px;
+    height: 75px;
+  }
+}
+
